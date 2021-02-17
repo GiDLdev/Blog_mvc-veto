@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `animal` (
   `idProprietaire` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_animal_proprietaire1_idx` (`idProprietaire`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `animal`
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `idRace` int NOT NULL,
   PRIMARY KEY (`idAnimal`),
   KEY `fk_chat_race_chat1_idx` (`idRace`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `chat`
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `chien` (
   `idRace` int NOT NULL,
   PRIMARY KEY (`idAnimal`),
   KEY `fk_chien_race_chien_idx` (`idRace`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `chien`
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `dossier` (
   `id` int NOT NULL AUTO_INCREMENT,
   `antecedents` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `dossier`
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `effectuer` (
   `idVeterinaire` int NOT NULL,
   PRIMARY KEY (`idGarde`),
   KEY `fk_effectuer_veterinaire1_idx` (`idVeterinaire`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `effectuer`
@@ -184,7 +184,7 @@ CREATE TABLE IF NOT EXISTS `garde` (
   `heure_debut` time NOT NULL,
   `heure_fin` time NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `garde`
@@ -209,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `horaire` (
   `idVeterinaire` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_horaire_veterinaire1_idx` (`idVeterinaire`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `horaire`
@@ -234,7 +234,7 @@ CREATE TABLE IF NOT EXISTS `medicament` (
   `effetsSecondaires` varchar(255) NOT NULL,
   `laboratoire` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `medicament`
@@ -283,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `prescrire` (
   `idMedicament` int NOT NULL,
   `posologie` varchar(255) NOT NULL,
   PRIMARY KEY (`idVisite`)
-) ENGINE=MyISAM AUTO_INCREMENT=443 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=443 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `prescrire`
@@ -310,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `proprietaire` (
   `telephone` varchar(255) NOT NULL,
   `telephoneMobile` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `proprietaire`
@@ -331,7 +331,7 @@ CREATE TABLE IF NOT EXISTS `race_chat` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=47 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `race_chat`
@@ -353,7 +353,7 @@ CREATE TABLE IF NOT EXISTS `race_chien` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `race_chien`
@@ -404,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `veterinaire` (
   `telephone` varchar(255) NOT NULL,
   `telephoneMobile` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `veterinaire`
@@ -431,7 +431,7 @@ CREATE TABLE IF NOT EXISTS `visite` (
   `idVeterinaire` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_visite_veterinaire1_idx` (`idVeterinaire`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `visite`
