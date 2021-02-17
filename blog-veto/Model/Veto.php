@@ -153,7 +153,6 @@ class Veto
     return $oStmt->execute($aData);
 	}
 
-
   public function addUser($aData)
   {
     $oStmt = $this->oDb->prepare('INSERT INTO Users (email, pseudo, password) VALUES(:email, :pseudo, :password)');

@@ -89,7 +89,7 @@ class Admin extends Veto
 
     public function update(array $aData)
     {
-      $oStmt = $this->oDb->prepare('UPDATE Animals SET nom = :nom WHERE id = :animalId LIMIT 1');
+      $oStmt = $this->oDb->prepare('UPDATE Animal SET nom = :nom WHERE id = :animalId LIMIT 1');
       $oStmt->bindValue(':animalId', $aData['animal_id'], \PDO::PARAM_INT);
       $oStmt->bindValue(':nom', $aData['nom'], \PDO::PARAM_STR);
       return $oStmt->execute();
@@ -104,7 +104,7 @@ class Admin extends Veto
       ];
 
       $oStmt = $this->oDb->prepare('UPDATE Animal SET photo = :photo WHERE id = :id');
-      move_uploaded_file($tmp_name,"static/img/animals/".$i['photo']);
+      move_uploaded_file($tmp_name,"static/img/animal/".$i['photo']);
       return $oStmt->execute($i);
     }
 
@@ -117,7 +117,7 @@ class Admin extends Veto
       ];
 
       $oStmt = $this->oDb->prepare('UPDATE Animal SET photo = :photo WHERE id = :id');
-      move_uploaded_file($tmp_name,"static/img/animals/".$i['photo']);
+      move_uploaded_file($tmp_name,"static/img/animal/".$i['photo']);
       return $oStmt->execute($i);
     }
 
@@ -183,8 +183,9 @@ class Admin extends Veto
 
     public function add(array $aData)
     {
-      $oStmt = $this->oDb->prepare('INSERT INTO Animal (nom) VALUES(:nom)');
+      $oStmt = $this->oDb->prepare('INSERT INTO Animal (nom, dateNaissance) VALUES(:nom, :dateNaissance)');
       $oStmt->bindValue(':nom', $aData['nom'], \PDO::PARAM_STR);
+      $oStmt->bindValue(':dateNaissance', $aData['dateNaissance'], \PDO::PARAM_STR);
       return $oStmt->execute();
     }
 }
